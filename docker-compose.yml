@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16
+    container_name: mbg_db
+    environment:
+      POSTGRES_USER: mbg
+      POSTGRES_PASSWORD: mbg_dev
+      POSTGRES_DB: mbg_dev
+      TZ: Asia/Jakarta
+      PGTZ: Asia/Jakarta
+    ports:
+      - "5433:5432"
+    volumes:
+      - mbg_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+volumes:
+  mbg_data:

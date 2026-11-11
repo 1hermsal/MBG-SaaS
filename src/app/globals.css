@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .muted { @apply text-gray-500 dark:text-gray-400; }
+  .ok { @apply text-emerald-600 dark:text-emerald-400; }
+  .bad { @apply text-red-600 dark:text-red-400; }
+  .line { @apply divide-y divide-gray-200/70 dark:divide-white/10; }
+  .field {
+    @apply h-14 w-full rounded-2xl border border-gray-200 bg-white px-4 text-lg outline-none
+      focus:border-brand-600 dark:border-white/10 dark:bg-white/5;
+  }
+}
+
+.dark { color-scheme: dark; }
+
+body {
+  @apply min-h-screen text-gray-900 antialiased dark:text-gray-100;
+  background: linear-gradient(160deg, #f1f5f9 0%, #ffffff 60%);
+}
+.dark body { background: linear-gradient(160deg, #0b1220 0%, #111827 70%); }
